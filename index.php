@@ -1,4 +1,4 @@
-//INICIO DE LA PAGINA 
+<?php //INICIO DE LA PAGINA ?>
 
 <?php
 include('connection.php'); //INCLUIR LA FUNCION DE CONEXION 'CONECTION'
@@ -18,29 +18,29 @@ $query = mysqli_query($con ,$sql); //SOLICITUD A LA BASE DE DATOS PARA CREAR EL 
     <title>USUARIOS CRUD</title>
 </head>
 <body>
-    <div>//DICCIONARIO 
-        <form action="insert_user.php" method="POST">//FORMULARIO
-            <h1>Crear usuario</h1>//SECCION DE LA PAG
+    <div><?php //DICCIONARIO ?>
+        <form action="insert_user.php" method="POST"> <?php //FORMULARIO?>
+            <h1>Crear usuario</h1><?php //SECCION DE LA PAG?>
 
-        //CADA INPUT ES UN CAMPO NECESARIO PARA LA CREACION DE UN USUARIO 
-            <input type="text" name ="nombre"placeholder ="nombre"> //PLACEHOLDER ES PARA INDICAR QUE DEBE IR EN CADA CAMPO 
+        <?php //CADA INPUT ES UN CAMPO NECESARIO PARA LA CREACION DE UN USUARIO ?>
+            <input type="text" name ="nombre"placeholder ="nombre"><?php  //PLACEHOLDER ES PARA INDICAR QUE DEBE IR EN CADA CAMPO?> 
             <input type="text" name ="apellido" placeholder ="Apellido">
             <input type="text" name ="username" placeholder ="Username">
             <input type="text" name ="password" placeholder ="password">
             <input type="text" name ="email" placeholder ="email">
 
-             <input type="submit" value="Agregar usuario"> //BOTÓN PARA AGREGAR EL USUARIO
+             <input type="submit" value="Agregar usuario"><?php  //BOTÓN PARA AGREGAR EL USUARIO?>
 
 
 
         </form>
     </div>
     <div>
-        <h2>Usuarios registrados</h2>//SUBTITULO DE SECCION DE REGISTROS REALIZADOS 
+        <h2>Usuarios registrados</h2><?php //SUBTITULO DE SECCION DE REGISTROS REALIZADOS ?>
         <table>
             <thead>
                 <tr>
-                    <TH>ID</TH> // TH : TITULOS DE CADA CAMPO
+                    <TH>ID</TH> // TH :<?php  //TITULOS DE CADA CAMPO?>
                     <th>nombre </th>
                     <th>apellido </th>
                     <th>username </th>
@@ -51,7 +51,7 @@ $query = mysqli_query($con ,$sql); //SOLICITUD A LA BASE DE DATOS PARA CREAR EL 
                 </tr>
             </thead>
             <tbody>
-                <?php  while($row= mysqli_fetch_array( $query)){; ?> //CICLO WHILE- ROW: REGISTRO O UNIDAD COMPLETA DE DATOS La función mysqli_fetch_array() toma el resultado de una consulta ($query) y devuelve una fila por vez
+                <?php  while($row= mysqli_fetch_array( $query)){; ?> <?php //CICLO WHILE- ROW: REGISTRO O UNIDAD COMPLETA DE DATOS La función mysqli_fetch_array() toma el resultado de una consulta ($query) y devuelve una fila por vez?>
                 <tr>
 
                     <th> <?= $row['id'] ?></th>
@@ -61,8 +61,10 @@ $query = mysqli_query($con ,$sql); //SOLICITUD A LA BASE DE DATOS PARA CREAR EL 
                     <th><?= $row['password'] ?></th>
                     <th><?= $row['email'] ?></th>
                     
-                    <th><a href="update.php?id= <?= $row['id'] ?>">EDITAR</a></th>         //BOTON EDITAR USUARIO--update.php LLAMA LA FUNCION 
-                    <th><a href="delete_user.php?id= <?= $row['id'] ?>">ELIMINAR</a></th>  //BOTON ELIMINAR USUARIO -- delete_user.php LLAMA LA FUNCION
+                    <th><a href="update.php?id= <?= $row['id'] ?>">EDITAR</a></th>        <?php  //BOTON EDITAR USUARIO--update.php LLAMA LA FUNCION ?>
+                    
+                    <th><a href="delete_user.php?id= <?= $row['id'] ?>">ELIMINAR</a></th> <?php  //BOTON ELIMINAR USUARIO -- delete_user.php LLAMA LA FUNCION?>
+                    
                 </tr>
                 <?php } ?>
             </tbody>
