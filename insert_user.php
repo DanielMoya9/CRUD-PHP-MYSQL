@@ -11,9 +11,10 @@ $apellido = $_POST['apellido'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
-$rolid = null;
+$rol= $_POST['rol'];
 
-$sql = "INSERT INTO users VALUES ('$id','$nombre','$apellido','$username', '$password','$email')";
+
+$sql = "INSERT INTO users VALUES ('$id','$nombre','$apellido','$username', '$password','$email', '$rol')";
 $query = mysqli_query($con ,$sql);
 
 if($query){

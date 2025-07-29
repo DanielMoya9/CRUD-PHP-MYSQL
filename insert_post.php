@@ -10,5 +10,6 @@ $contenido = $_POST['contenido'];
 $sql = "INSERT INTO posts (user_id, titulo, contenido) VALUES ('$user_id', '$titulo', '$contenido')";
 $query = mysqli_query($con, $sql);
 
+
 header("Location: index.php");
 ?>

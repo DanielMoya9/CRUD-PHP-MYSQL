@@ -22,13 +22,14 @@ $row = mysqli_fetch_array($query);
         <form action="edit_user.php" method="POST">
             <h1>Editar usuario</h1>
             <input type="hidden" name ="id" value="<?= $row['id'] ?>">
-            <input type="text" name ="nombre"placeholder ="nombre" value="<?= $row['nombre'] ?>">
+            <input type="text" name ="nombre" placeholder ="nombre" value="<?= $row['nombre'] ?>">
             <input type="text" name ="apellido" placeholder ="Apellido" value="<?= $row['apellido'] ?>">
-            <input type="text" name ="username" placeholder ="Username"value="<?= $row['username'] ?>">
-            <input type="text" name ="password" placeholder ="password"value="<?= $row['password'] ?>">
-            <input type="text" name ="email" placeholder ="email"value="<?= $row['email'] ?>">
-
-             <input type="submit" value="Actualizar usuario"> 
+            <input type="text" name ="username" placeholder ="Username" value="<?= $row['username'] ?>">
+            <input type="text" name ="password" placeholder ="password" value="<?= $row['password'] ?>">
+            <input type="text" name ="email" placeholder ="email" value="<?= $row['email'] ?>">
+            
+            <input type="text" name="Rol" placeholder="Rol" value="<?= $row['Rol'] ?>">
+            <input type="submit" value="Actualizar usuario"> 
 
 
         </form>
