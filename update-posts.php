@@ -1,6 +1,5 @@
-//MODIFICAR USUARIO
-
 <?php
+//MODIFICAR POSTS
 include('connection.php');
 
 $con =connection();

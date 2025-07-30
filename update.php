@@ -1,6 +1,5 @@
-//MODIFICAR USUARIO
-
 <?php
+
 include('connection.php');
 
 $con =connection();
@@ -21,14 +20,24 @@ $row = mysqli_fetch_array($query);
     <div>
         <form action="edit_user.php" method="POST">
             <h1>Editar usuario</h1>
-            <input type="hidden" name ="id" value="<?= $row['id'] ?>">
-            <input type="text" name ="nombre" placeholder ="nombre" value="<?= $row['nombre'] ?>">
-            <input type="text" name ="apellido" placeholder ="Apellido" value="<?= $row['apellido'] ?>">
-            <input type="text" name ="username" placeholder ="Username" value="<?= $row['username'] ?>">
-            <input type="text" name ="password" placeholder ="password" value="<?= $row['password'] ?>">
-            <input type="text" name ="email" placeholder ="email" value="<?= $row['email'] ?>">
+            <br>
             
-            <input type="text" name="Rol" placeholder="Rol" value="<?= $row['Rol'] ?>">
+            <input type="hidden" name ="id" value="<?= $row['id'] ?>"><br>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name ="nombre" placeholder ="nombre" value="<?= $row['nombre'] ?>"><br>
+            <label for="apellido">Apellido</label><br>
+            <input type="text" name ="apellido" placeholder ="Apellido" value="<?= $row['apellido'] ?>"><br>
+            <label for="username">Username</label><br>
+            <input type="text" name ="username" placeholder ="Username" value="<?= $row['username'] ?>"><br>
+            <label for="password">Password</label><br>
+            <input type="text" name ="password" placeholder ="password" value="<?= $row['password'] ?>"><br>
+            <label for="email">Email</label><br>
+            <input type="text" name ="email" placeholder ="email" value="<?= $row['email'] ?>"><br>
+            <label for="rol">Rol</label><br>
+
+            <input type="text" name="Rol" placeholder="Rol" value="<?= $row['Rol'] ?>"><br>
+            <br>
+            <br>
             <input type="submit" value="Actualizar usuario"> 
 
 
