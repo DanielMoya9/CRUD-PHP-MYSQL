@@ -5,7 +5,7 @@ include('connection.php');
 $con =connection();
 
 $id = $_POST['id'];
-$titulo = $_POST['titulo'];
+$titulo = strtoupper($_POST['titulo']);
 $contenido = $_POST['contenido'];
 
 
