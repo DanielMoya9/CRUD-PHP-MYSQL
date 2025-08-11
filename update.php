@@ -33,6 +33,9 @@ $row = mysqli_fetch_array($query);
             <input type="text" name ="password" placeholder ="password" value="<?= $row['password'] ?>"><br>
             <label for="email">Email</label><br>
             <input type="text" name ="email" placeholder ="email" value="<?= $row['email'] ?>"><br>
+            <label for="telefono">Telefono</label><br>
+            <input type="text" name ="telefono" placeholder ="telefono" value="<?= $row['telefono'] ?>"><br>
+            
             <label for="rol">Rol</label><br>
 
             <input type="text" name="Rol" placeholder="Rol" value="<?= $row['Rol'] ?>"><br>
@@ -40,8 +43,8 @@ $row = mysqli_fetch_array($query);
             <br>
             <input type="submit" value="Actualizar usuario"> 
 
-
         </form>
     </div>
 </body>
 </html>
+

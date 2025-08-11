@@ -3,7 +3,7 @@
 include('connection.php');
 $con = connection();
 
-$sql = "SELECT users.id AS user_id, users.nombre, users.apellido, users.username, users.password, users.email, users.Rol, posts.id AS post_id, posts.titulo, posts.contenido
+$sql = "SELECT users.id AS user_id, users.nombre, users.apellido, users.username, users.password, users.email, users.telefono , users.Rol, posts.id AS post_id, posts.titulo, posts.contenido
         FROM users
         LEFT JOIN posts ON users.id = posts.user_id";
 $query = mysqli_query($con, $sql);
@@ -45,8 +45,9 @@ $query = mysqli_query($con, $sql);
                 <th>USERNAME</th>
                 <th>PASSWORD</th>
                 <th>EMAIL</th>
-                <th>TITULO</th>
+                <th>TELEFONO</th>
                 <th>ROL</th>
+                <th>TITULO</th>
                 <th>EDITAR USUARIO</th>
                 <th>ELIMINAR USUARIO</th>
                 <th>EDITAR POSTS</th>
@@ -62,8 +63,9 @@ $query = mysqli_query($con, $sql);
                 <th><?= $row['username'] ?></th>
                 <th>******</th>
                 <th><?= $row['email'] ?></th>
-                <th><?= $row['titulo'] ?></th>
+                <th><?= $row['telefono'] ?></th>
                 <th><?= $row['Rol'] ?></th>
+                <th><?= $row['titulo'] ?></th>
                 <th><a href="update.php?id=<?= $row['user_id'] ?>">EDITAR</a></th>
                 <th><a href="delete_user.php?id=<?= $row['user_id'] ?>" onclick="return confirm('¿Está seguro de eliminar este usuario?')">ELIMINAR</a></th>
                 <th>

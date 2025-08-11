@@ -16,7 +16,9 @@ if ($password !== $confirm_password) {
     exit;
 }
 $email = strtoupper(trim($_POST['email']));
+$telefono = strtoupper(trim($_POST['telefono']));
 $Rol = strtoupper(trim($_POST['Rol']));
+
 
 if (
     empty($nombre) ||
@@ -24,6 +26,7 @@ if (
     empty($username) ||
     empty($password) ||
     empty($email) ||
+    empty($telefono) ||
     empty($Rol)
 ) {
     // Puedes redirigir o mostrar un mensaje de error
@@ -31,7 +34,7 @@ if (
     exit;
 }
 
-$sql = "INSERT INTO users VALUES ('$id','$nombre','$apellido','$username', '$password','$email', '$Rol')";
+$sql = "INSERT INTO users VALUES ('$id','$nombre','$apellido','$username', '$password','$email','$telefono', '$Rol')";
 $query = mysqli_query($con, $sql);
 
 if ($query) {
