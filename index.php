@@ -1,4 +1,6 @@
-<?php //INICIO DE LA PAGINA ?>
+<?php //INICIO DE LA PAGINA
+// 
+ ?>
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -52,20 +54,44 @@ $query = mysqli_query($con, $sql);
         }
 
         .form-group input {
-            width: 100%;
+            width: 40%;
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            box-sizing: border-box;
+            box-sizing: 5px;
         }
 
         .form-group input:invalid {
-            border-color: #ff6b6b;
+            border-color: #3a2d2dff;
         }
 
         .form-group input:valid {
             border-color: #51cf66;
         }
+        .form-group input[type="submit"] {
+            background-color: #00ff0dff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: #9abadaff; /* Azul */
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        .btn-link:hover {
+            background-color: #495969ff;
+        }
+ 
+
     </style>
 </head>
 
@@ -157,13 +183,15 @@ $query = mysqli_query($con, $sql);
                     title="Solo letras, 2-20 caracteres" required>
             </div>
 
-            <input type="submit" value="Agregar usuario">
+            <input type="submit" class="btn-link" value="Agregar usuario">
 
             <br>
             <br>
-            <a href="usuarios.php">Ver usuarios registrados</a>
+            <a href="usuarios.php" class="btn-link">Ver usuarios registrados</a>
+          
+             
             <BR></BR>
-            <a href="inicio_sesion.php">LOGIN</a>
+            <a href="inicio_sesion.php" class="btn-link">LOGIN</a>
         </form>
     </div>
 
@@ -182,7 +210,7 @@ $query = mysqli_query($con, $sql);
             </select>
             <input type="text" name="titulo" placeholder="Título del post" required>
             <textarea name="contenido" placeholder="Contenido" required></textarea>
-            <input type="submit" value="Agregar post">
+            <input type="submit" class="btn-link" value="Agregar post">
             <br>
             <br>
             <br>
@@ -229,6 +257,41 @@ $query = mysqli_query($con, $sql);
             return true;
         }
     </script>
+
+        <Style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }   
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            
+        }
+        form input[type="text"],
+        form input[type="password"],
+        form input[type="email"],
+        form input[type="submit"],
+        form select,        
+        form textarea {
+            width: 100%;
+            padding: 10px;  
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        </Style>
 </body>
 
 </html>

@@ -21,17 +21,29 @@ $query = mysqli_query($con, $sql);
             margin-top: 30px;
         }
         th, td {
-            border: 1px solid #333;
+            border: 0.5px solid #333;
             padding: 8px;
             text-align: left;
+            font-family: Arial, Helvetica, sans-serif ;
+            font-weight: normal;
+            
         }
         thead th {
             background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif ;
+            font-weight: bold;
+            text-align: center;
+
+
         }
         h2 {
-            margin-top: 40px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
+        
+
+
+
     </style>
 </head>
 <body>

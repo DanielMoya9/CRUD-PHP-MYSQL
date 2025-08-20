@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
+     
 </head>
 <body>
     <div>
@@ -14,22 +15,16 @@
             <label for="password">Password</label><br>
             <input type="password" name="password" placeholder="Password" required><br>
             <br>
-            <input type="submit" value="Iniciar sesión">
+            <button type="submit" >Iniciar sesión</button>
             
         </form>
-         
-<?php
-$query =(isset($_POST['username']) && isset($_POST['password'])) ? "SELECT * FROM users WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'" : '';
-if ($query) {
-    include('connection.php');
-    $con = connection();
-    $result = mysqli_query($con, $query);
-}
-
-if($query){
-    header("location: index.php");}
-?>
-  
+        <?php
+            // Mostramos el mensaje de error si existe
+            if (!empty($error_message)) {
+                echo "<p class='error-message'>$error_message</p>";
+            }
+            ?>
+      
     </div>
 </body>
 </html>
