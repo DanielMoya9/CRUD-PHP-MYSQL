@@ -11,21 +11,13 @@ $apellido = strtoupper(trim($_POST['apellido']));
 $username = strtoupper(trim($_POST['username']));
 $password = trim($_POST['password']);
 $confirm_password = trim($_POST['confirm_password']);
+$email= trim($_POST['email']);
+$telefono=trim($_POST['telefono']);
+$Rol=trim($_POST['Rol']);
 if ($password !== $confirm_password) {
     header("Location: index.php?error=contraseñas_no_coinciden");
     exit;
 }
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-// Ahora guarda $hashedPassword en la base de datos en lugar de $password
-$stmt = $con->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-$stmt->bind_param("ss", $username, $hashedPassword);
-$stmt->execute();
-
-$email = strtoupper(trim($_POST['email']));
-$telefono = strtoupper(trim($_POST['telefono']));
-$Rol = strtoupper(trim($_POST['Rol']));
-
 
 if (
     empty($nombre) ||
@@ -40,7 +32,7 @@ if (
     header("Location: index.php?error=campos_vacios");
     exit;
 }
-if ($password !== $confim_password) {
+if ($password !== $confirm_password) {
     header("Location: index.php?error=contrasenas_no_coinciden");
     exit;
 }

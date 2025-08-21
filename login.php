@@ -2,7 +2,7 @@
 session_start();
 require_once 'connection.php';
 $con = connection();
-$error_message="";
+$error_message="INCORRECTO";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = ( $_POST['username']);
@@ -21,11 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: index.php");
             exit();
     }else {
-        $error_message="Usuario o contraseña incorrectos";}}
-        header("Location: inicio_sesion.php");
-                
+        $error_message="";}
+        header("Location: inicio_sesion.php". urlencode($error_message));
+    exit;            
 
-
+    }
+    else {
+        // Usuario no encontrado
+        $error_message = "Usuario no encontrado.";
+        header("Location: inicio_sesion.php?error=" . urlencode($error_message));
+        exit;
+}
 ?>
-
-

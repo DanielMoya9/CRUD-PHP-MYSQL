@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,13 @@
 </head>
 <body>
     <div>
+        <?php
+        // Capturamos el mensaje de error desde GET
+        $error_message = '';
+        if (isset($_GET['error'])) {
+            $error_message = htmlspecialchars($_GET['error']); // Previene XSS
+        }
+        ?>
         <form action="login.php" method="POST">
             <h1>Iniciar sesión</h1>
             <label for="username">Username</label><br>
@@ -18,13 +26,15 @@
             <button type="submit" >Iniciar sesión</button>
             
         </form>
+        
         <?php
-            // Mostramos el mensaje de error si existe
-            if (!empty($error_message)) {
-                echo "<p class='error-message'>$error_message</p>";
-            }
-            ?>
+        // Mostramos el mensaje de error si existe
+        if (!empty($error_message)) {
+            echo "<p class='error-message'>$error_message</p>";
+        }
+        ?>
       
+
     </div>
 </body>
 </html>

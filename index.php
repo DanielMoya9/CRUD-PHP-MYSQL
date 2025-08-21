@@ -148,14 +148,14 @@ $query = mysqli_query($con, $sql);
 
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username" placeholder="Username" pattern="[A-Za-z0-9]{3,20}"
+                <input type="text" name="username" id="username" placeholder="Username" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]{3,20}"
                     title="Solo letras y números, 3-20 caracteres" required>
             </div>
 
             <div class="form-group">
                 <label for="password">Contraseña:</label>
                 <input type="password" name="password" id="password" placeholder="Contraseña"
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$"
+                    pattern="^(?=.*[a-záéíóúñ])(?=.*[A-ZÁÉÍÓÚÑ])(?=.*\d)[A-Za-zÁÉÍÓÚáéíóúÑñ\d@$!%*?&]{8,}$"
                     title="Mínimo 8 caracteres, al menos 1 mayúscula, 1 minúscula y 1 número" required>
             </div>
 
@@ -230,7 +230,7 @@ $query = mysqli_query($con, $sql);
             const rol = document.getElementById('Rol').value;
 
             // Validar que no estén vacíos
-            if (!nombre || !apellido || !username || !password || !confirm_password || !email  || !rol) {
+            if (!nombre || !apellido || !username || !password || !confirm_password || !email  || !telefono || !rol) {
                 alert('Todos los campos son obligatorios');
                 return false;
             }
