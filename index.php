@@ -192,29 +192,16 @@ $query = mysqli_query($con, $sql);
              
             <BR></BR>
             <a href="inicio_sesion.php" class="btn-link">LOGIN</a>
+            <BR></BR>
+
+            <a href="CREAR-POST.php" class="btn-link">NUEVO POST</a>
         </form>
     </div>
 
     <div>
-        <form action="insert_post.php" method="POST">
-            <h1>Crear post</h1>
-            <select name="user_id" required>
-                <option value="">Seleccione un usuario</option>
-                <?php
-                // Consulta para mostrar usuarios en el select
-                $users = mysqli_query($con, "SELECT id, nombre FROM users");
-                while ($u = mysqli_fetch_array($users)) {
-                    echo "<option value='{$u['id']}'>{$u['nombre']}</option>";
-                }
-                ?>
-            </select>
-            <input type="text" name="titulo" placeholder="Título del post" required>
-            <textarea name="contenido" placeholder="Contenido" required></textarea>
-            <input type="submit" class="btn-link" value="Agregar post">
-            <br>
-            <br>
-            <br>
-        </form>
+        
+       
+
     </div>
 
     <!-- JavaScript para validaciones adicionales -->
